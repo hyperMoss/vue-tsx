@@ -1,22 +1,53 @@
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onBeforeMount, onBeforeUpdate, onUpdated, onUnmounted, onErrorCaptured, onBeforeUnmount, ref, onMounted, onRenderTriggered } from 'vue';
 
 export default defineComponent({
   name: 'Lifecircle',
   setup() {
     const message = ref('');
+    const TextAarray: String[] = ['beforeCreate -> 使用 setup()',
+      'created -> 使用 setup()',
+      ' beforeMount -> onBeforeMount',
+      'mounted -> onMounted',
+      'beforeUpdate -> onBeforeUpdate',
+      'updated -> onUpdated',
+      'beforeDestroy -> onBeforeUnmount',
+      'destroyed -> onUnmounted',
+      'errorCaptured -> onErrorCaptured']
+    onBeforeMount(() => {
+      message.value = message.value + '\n onBeforeMount!!!';
+    })
     onMounted(() => {
-      message.value = message.value + '我触发了一次';
-    });
-    onMounted(() => {
-      message.value = message.value + '\n我又触发了一次';
-    });
-    onMounted(() => {
-      message.value = message.value + '\n我又触发了2次';
-    });
+      message.value = message.value + '\n onMounted!!!';
+    })
+    // onBeforeUpdate(() => {
+    //   message.value = message.value + '\n onBeforeUpdate!!!';
+    // })
+    // onUpdated(() => {
+    //   message.value = message.value + '\n onUpdated!!!';
+    // })
+    onBeforeUnmount(() => {
+      message.value = message.value + '\n onBeforeUnmount!!!';
+    })
+    onUnmounted(() => {
+      message.value = message.value + '\n onUnmounted!!!';
+    })
+    onErrorCaptured(() => {
+      message.value = message.value + '\n onErrorCaptured!!!';
+    })
+    onRenderTriggered((e) => { console.log(e); })
+    const usersElements = [] // 保存每个句子渲染以后 JSX 的数组
+    for (let item of TextAarray) {
+      usersElements.push( // 循环每个文字，构建 JSX，push 到数组中
+        <li><span>{item}</span> <hr /></li>
+      )
+    }
     return () => (
       <>
-        this is lifecircle component.
+      <div>
+        <h2>this is lifecircle component.</h2>
+        <ul>{usersElements}</ul>
         <pre>{message.value}</pre>
+      </div>
       </>
     );
   },

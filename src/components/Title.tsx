@@ -1,13 +1,13 @@
-import { defineComponent } from 'vue'
-export default  defineComponent({
+import { defineComponent } from 'vue';
+export default defineComponent({
   name: 'Title',
   props: {
     name: {
-      Type: String,
-      required: true
-    }
+      type: String,
+      required: true,
+    },
   },
   setup(props) {
-    return () => <div>{props.name}</div>
+    return () => <h1>{props.name}</h1>;
   },
-})
+});
