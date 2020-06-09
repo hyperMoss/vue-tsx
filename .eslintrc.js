@@ -1,9 +1,9 @@
 /*
  * @Author: gooing
  * @since: 2020-06-08 23:39:46
- * @lastTime: 2020-06-09 00:52:49
+ * @lastTime: 2020-06-09 00:55:31
  * @LastAuthor: gooing
- * @文件相对于项目的路径: \vue3-demo\vue-tsx\.eslintrc.js
+ * @FilePath: \vue3-demo\vue-tsx\.eslintrc.js
  * @message:
  */
 

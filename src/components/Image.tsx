@@ -1,6 +1,6 @@
-import { defineComponent, ref, watch, onMounted } from "vue";
+import { defineComponent, ref, watch, onMounted } from 'vue';
 export default defineComponent({
-  name: "Image",
+  name: 'Image',
   setup() {
     const imageRef = ref<HTMLImageElement>(); // 此时为 null
     // 挂载后获取到其Ref
@@ -15,16 +15,11 @@ export default defineComponent({
       () => imageRef.value, // 当 img ref 传递到 imageRef 时，触发，获取到其值
       (val) => {
         console.log(val); // 输出获取到的值
-      }
+      },
     );
 
     return () => {
-      return (
-        <img
-          ref={imageRef}
-          src={"https://avatars3.githubusercontent.com/u/49316198?s=60&v=4"}
-        />
-      );
+      return <img ref={imageRef} src={'https://avatars3.githubusercontent.com/u/49316198?s=60&v=4'} />;
     };
   },
 });
