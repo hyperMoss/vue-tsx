@@ -8,6 +8,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-    return () => <h1>{props.name}</h1>;
+    return () => <><h1>{props.name}</h1></>;
   },
 });
