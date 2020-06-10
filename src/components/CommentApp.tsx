@@ -4,6 +4,7 @@ import CommentList from './CommentList';
 export default defineComponent({
   name: 'CommentApp',
   setup() {
+    // 用reactive 包装对象使其获得响应性
     const commentDataList = reactive([
       { username: 'Jerry', content: 'Hello' },
       { username: 'Tomy', content: 'World' },

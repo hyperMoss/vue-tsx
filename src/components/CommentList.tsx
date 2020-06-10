@@ -3,14 +3,15 @@ import Comment from "./Comment";
 
 export default defineComponent({
   name: 'Commentcomments',
-  props:{
-    comments:{
-      type:Array,
-      required:true
+  props: {
+    comments: {
+      type: Array,
+      required: true
     }
   },
   setup(props) {
     return () =>
-      <div>{props.comments.map((comment,i)=><Comment comment={comment} key={i} />)}</div>
+      // 直接在jsx内渲染评论列表
+      <div>{props.comments.map((comment, i) => <Comment comment={comment} key={i} />)}</div>
   }
 })

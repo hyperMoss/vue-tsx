@@ -35,20 +35,19 @@ export default defineComponent({
       message.value = message.value + '\n onErrorCaptured!!!';
     })
     onRenderTriggered((e) => { console.log(e); })
-    const usersElements = [] // 保存每个句子渲染以后 JSX 的数组
+    // 采用 jsx数组模式渲染
+    const usersElements = [] // 保存每个句子渲染以后jsx的数组
     for (let item of TextAarray) {
-      usersElements.push( // 循环每个文字，构建 JSX，push 到数组中
+      usersElements.push( // 循环每个文字，构建jsx，push 到数组中
         <li><span>{item}</span> <hr /></li>
       )
     }
     return () => (
-      <>
       <div>
         <h2>this is lifecircle component.</h2>
         <ul>{usersElements}</ul>
         <pre>{message.value}</pre>
       </div>
-      </>
     );
   },
 });
