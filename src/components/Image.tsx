@@ -5,7 +5,7 @@ export default defineComponent({
     const imageRef = ref<HTMLImageElement>();
     // 组件挂载后获取到其Ref
     onMounted(() => {
-      console.log(imageRef.value);
+      console.log(imageRef.value,'mounted');
     });
     // 或者watch
     watch(

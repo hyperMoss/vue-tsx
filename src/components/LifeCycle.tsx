@@ -6,7 +6,7 @@ export default defineComponent({
     const message = ref('');
     const TextAarray: String[] = ['beforeCreate -> 使用 setup()',
       'created -> 使用 setup()',
-      ' beforeMount -> onBeforeMount',
+      'beforeMount -> onBeforeMount',
       'mounted -> onMounted',
       'beforeUpdate -> onBeforeUpdate',
       'updated -> onUpdated',
@@ -43,11 +43,11 @@ export default defineComponent({
       )
     }
     return () => (
-      <div>
+      <>
         <h2>this is lifecircle component.</h2>
         <ul>{usersElements}</ul>
         <pre>{message.value}</pre>
-      </div>
+      </>
     );
   },
 });
