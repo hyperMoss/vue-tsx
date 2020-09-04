@@ -22,7 +22,9 @@ export default defineComponent({
     }
     // 处理提交 函数
     function handleSubmit() {
-      props.submitComment( JSON.parse(JSON.stringify({ username, content }))  )
+      // 打成json拷贝，是为了防止传地址过去被一直引用问题，现在vue3 rc新版本修复了
+      // JSON.parse(JSON.stringify({ username:username.value, content:content.value }))
+      props.submitComment(  {username:username.value, content:content.value }  )
       content.value = ''
     }
     return () => (

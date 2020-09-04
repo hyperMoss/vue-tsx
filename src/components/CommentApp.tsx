@@ -15,6 +15,7 @@ export default defineComponent({
     function handlePushComment(data) {
       console.log(data);
       commentDataList.push(data);
+      console.table(commentDataList)
     }
     return () => (
       <div class="wrapper">

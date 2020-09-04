@@ -18,7 +18,7 @@ export default defineComponent({
     );
 
     return () => {
-      return <img ref={imageRef} src={'https://avatars3.githubusercontent.com/u/49316198?s=460&u=5675a6b85989094445e834e86391a0e8e9e51738&v=4'} />;
+      return <img style={{height:'200px'}} ref={imageRef} src={'https://avatars3.githubusercontent.com/u/49316198?s=460&u=5675a6b85989094445e834e86391a0e8e9e51738&v=4'} />;
     };
   },
 });
